@@ -6,24 +6,6 @@ from telethon import events
 from queue import Queue
 import requests
 from telethon.sync import functions
-from user_agent import generate_user_agent
-import requests
-from user_agent import *
-from help import *
-from config import *
-from threading import Thread
-
-a = 'qwertyuiopasdfghjklzxcvbnm'
-b = '0'
-e = '1'
-z = '2'
-h = '3'
-k = '4'
-q = '5'
-v = '6'
-n = '7'
-i = '8'
-p = '9'
 
 banned = []
 isclaim = ["off"]
@@ -31,16 +13,11 @@ isauto = ["off"]
 with open("banned.txt", "r") as f:
     f = f.read().split()
     banned.append(f)
-
-que = Queue()
-
-
 def check_user(username):
     url = "https://t.me/"+str(username)
     headers = {
         "User-Agent": generate_user_agent(),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-        "Accept-Encoding": "gzip, deflate, br",
+ : "gzip, deflate, br",
         "Accept-Language": "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7"}
 
     response = requests.get(url, headers=headers)
